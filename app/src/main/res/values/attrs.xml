@@ -4,5 +4,6 @@
     <declare-styleable name="BarChartView">
         <attr name="month" format="boolean"/>
     </declare-styleable>
+
     
 </resources>

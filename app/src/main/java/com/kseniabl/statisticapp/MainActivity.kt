@@ -2,10 +2,9 @@ package com.kseniabl.statisticapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.kseniabl.statisticapp.databinding.ActivityMainBinding
-import kotlin.math.max
-import kotlin.random.Random
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,36 +19,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setBarChart()
-        buttonClick()
+        binding.barChartView.barChart = BarChartData(mutableMapOf(
+            "17.06" to arrayListOf(100, 150, 50),
+            "18.06" to arrayListOf(400, 200),
+            "19.06" to arrayListOf(100, 50),
+            "20.06" to arrayListOf(80, 80, 300),
+            "21.06" to arrayListOf(400, 100, 100, 200),
+            "22.06" to arrayListOf(50, 50),
+            "23.06" to arrayListOf(200, 70)),
+            arrayListOf("1 Article", "2 Article", "3 Article", "4 Article")
+        )
     }
 
-    private fun setBarChart() {
-        val count = (5..9).random()
-        val map = mutableMapOf<String, ArrayList<Int>>()
-        for (i in 0 until count) {
-            val valuesCount = (1..6).random()
-            val numArray = arrayListOf<Int>()
-            for (j in 0 until valuesCount) {
-                numArray.add(valuesFromOneRect.random())
-            }
-            map["${17+i}.08"] = numArray
-        }
-
-        val prodsArray = arrayListOf<String>()
-        var maxSize = 0
-        for (i in map.values) {
-            if (maxSize < i.size)
-                maxSize = i.size
-        }
-        for (i in 0 until maxSize) {
-            prodsArray.add(prodsNames.random())
-        }
-
-        binding.barChartView.barChart = BarChartData(map, prodsArray)
-    }
-
-    private fun buttonClick() {
-        binding.randomChartButton.setOnClickListener { setBarChart() }
-    }
 }

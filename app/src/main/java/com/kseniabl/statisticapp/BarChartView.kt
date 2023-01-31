@@ -19,7 +19,7 @@ class BarChartView(context: Context, attributeSet: AttributeSet?,
     private var isMonth = false
 
     private val oneColumnSize = 100
-    private var columnsCount = 0
+    private var columnsCount = 1
     private val sideNumsCount = 4
     private var maxSum = 0
     private var maxValueHeight = 600
@@ -62,14 +62,16 @@ class BarChartView(context: Context, attributeSet: AttributeSet?,
         initPaints()
 
         if (isInEditMode) {
-            /*barChart = BarChartData(mutableMapOf(
+            barChart = BarChartData(mutableMapOf(
                 "17.06" to arrayListOf(100, 150, 50),
                 "18.06" to arrayListOf(400, 200),
                 "19.06" to arrayListOf(100, 50),
                 "20.06" to arrayListOf(80, 80, 300),
                 "21.06" to arrayListOf(400, 100, 100, 200),
                 "22.06" to arrayListOf(50, 50),
-                "23.06" to arrayListOf(200, 70)))*/
+                "23.06" to arrayListOf(200, 70)),
+                arrayListOf("Coffee", "Pizza", "Nuggets", "Milk")
+            )
         }
     }
 

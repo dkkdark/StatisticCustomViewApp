@@ -14,9 +14,4 @@ class BarChartData(private val map: MutableMap<String, ArrayList<Int>>,
     fun getValuesForMap(): ArrayList<String> {
         return valuesForMap
     }
-
-    fun setData(key: String, data: ArrayList<Int>) {
-        map[key] = data
-        listener?.invoke(this)
-    }
 }

@@ -7,24 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Views of your articles"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
     <com.kseniabl.statisticapp.BarChartView
         android:id="@+id/barChartView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/round_rect_background" />
-
-    <Button
-        android:id="@+id/randomChartButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Random chart"
-        app:layout_constraintTop_toBottomOf="@id/barChartView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
